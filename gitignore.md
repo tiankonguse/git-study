@@ -58,7 +58,6 @@ Thumbs.db
 You may also want to check out GitHub's gitignore repository, which contains a list of .gitignore files for many popular operating systems, environments, and languages.
 
 
-
-
+same as the file .git/info/exclude
 
 
