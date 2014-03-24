@@ -9,9 +9,19 @@
 来到 [github](https://github.com/) 官网即可注册帐号。
 
 
-## fork 别人的代码
+## Fork A Repo
+
+At some point you may find yourself wanting to contribute to someone else's project, or would like to use someone's project as the starting point for your own. 
+
+在某些时候，你可能会发现自己想为别人的项目做贡献，或想用别人的项目作为你自己的项目的起点。
+
+This is known as "forking". 
+
+这就是所谓的分支(fork).
 
 比如进入我的 [.vim](https://github.com/tiankonguse/.vim) 配置文件
+
+To fork this project, click the "Fork" button in the GitHub.com repository.
 
 在右上角可以看到 fork 这个单词，点击即可 fork 了。
 
@@ -32,6 +42,23 @@ git clone git@github.com:tiankonguse/.vim.git
 
 修改后， push 到自己的 github 上。
 
+## 配置 remotes
+
+When a repository is cloned, it has a default remote called origin that points to your fork on GitHub, not the original repository it was forked from. 
+
+当一个项目被 cloned 时，它有一个默认的 remote ，被成为 origin. 这个 origin 指向你github上的分支(fork),不是原始你 forked 的项目的分支。
+
+To keep track of the original repository, you need to add another remote named upstream。
+
+为了追踪原始的项目，你需要添加另外一个名字为 upstream 的 remote。
+
+````
+git remote add upstream https://github.com/tiankonguse/.vim
+\# Assigns the original repository to a remote called "upstream"
+git fetch upstream
+\# Pulls in changes not present in your local repository, without modifying your files
+````
+
 ## pull 到原作者
 
 在你的项目里应该可以看到 Pull Request   这个词，点进去。
@@ -40,13 +67,6 @@ git clone git@github.com:tiankonguse/.vim.git
 
 然后可以在下面要填写标题和内容。
 填写上然后点击 comment 即可。
-
-
-
-
-
-
-
 
 
 
