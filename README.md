@@ -33,8 +33,8 @@ git config --add core.filemode false
 
 
 ```
-git config credential.helper store  
-git config credential.helper 'cache --timeout=3600'  
+git config --global credential.helper store  
+git config --global credential.helper 'cache --timeout=3600'  
 ```
 
 
