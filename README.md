@@ -13,6 +13,24 @@
 ## 常见命令
 
 
+
+0. 设置账号信息  
+
+
+
+
+``` 
+git config --global user.name "tiankonguse" // 配置提交用户名
+git config --global user.email "i@tiankonguse.com" // 配置e-mail信息
+git config --global core.editor vim // 配置默认文本编辑器，当Git 需要你输入信息时会调用它
+git config --global alias.st status // 为status配置别名st，这样git status就可以写成git st
+git config --list // 查看当前仓库的所有配置信息（包括分支相关的信息）
+git config user.name // 查看当前仓库的用户名信息
+git config -e --global // 编辑全局配置文件
+git config -e // 编辑当前仓库的配置文件  
+```
+
+
 1. 忽略mode  
 
 
