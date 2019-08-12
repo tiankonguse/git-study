@@ -56,4 +56,22 @@ git config --global credential.helper 'cache --timeout=3600'
 ```
 
 
+3. git diff 乱码
+
+
+显示为 
+
+```
+<E9><94><99><E8><AF><AF><E4><BF><A1><E6><81><AF>
+```
+
+修复方法：  
+
+```
+git config --global i18n.commitencoding utf-8
+git config --global i18n.logoutputencoding utf-8
+export LESSCHARSET=utf-8
+```
+
+
 
