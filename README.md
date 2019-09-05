@@ -78,8 +78,9 @@ export LESSCHARSET=utf-8
 ```
 # --oneline 将每个提交放在一行显示
 # --simplify-by-decoration 只展示分支或标签引用的提交
+# --graph 查看各分支之间的关系
 # --all 展示所有的提交
-git log --oneline --simplify-by-decoration --all
+git log --oneline --simplify-by-decoration --graph --all
 ```
 
 
