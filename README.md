@@ -73,5 +73,13 @@ git config --global i18n.logoutputencoding utf-8
 export LESSCHARSET=utf-8
 ```
 
+4. 显示各认知的 commit id
+
+```
+# --oneline 将每个提交放在一行显示
+# --simplify-by-decoration 只展示分支或标签引用的提交
+# --all 展示所有的提交
+git log --oneline --simplify-by-decoration --all
+```
 
 
