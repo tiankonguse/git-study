@@ -84,3 +84,16 @@ git log --oneline --simplify-by-decoration --graph --all
 ```
 
 
+5. 同步 fork 的代码
+
+
+```
+#设置远程项目地址
+git remote add upstream https://github.com/tiankonguse/leetcode-solutions.git  
+#拉去最新数据
+git fetch upstream master  
+git merge upstream/master  #合并  
+git push origin master #推送到 github  
+```
+
+
