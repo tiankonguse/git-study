@@ -97,3 +97,45 @@ git push origin master #推送到 github
 ```
 
 
+6. CRLF 与 LF 警告问题  
+
+
+UNIX/Linux  上换行符是 `0x0A（LF）`
+Mac OS 上的换行符是`0x0D（CR）`  
+windos 上的换行符是`0x0D0A（CRLF）`
+
+
+所以面对换行符问题，`git`有几个配置可以选择。  
+
+
+```
+# 提交时转换为LF，检出时转换为CRLF
+git config --global core.autocrlf true
+
+# 提交时转换为LF，检出时不转换
+git config --global core.autocrlf input
+
+# 提交检出均不转换
+git config --global core.autocrlf false
+
+# 拒绝提交包含混合换行符的文件
+git config --global core.safecrlf true
+
+# 允许提交包含混合换行符的文件
+git config --global core.safecrlf false
+
+# 提交包含混合换行符的文件时给出警告
+git config --global core.safecrlf warn
+
+```
+
+
+建议大家选择自动转换为`LF`，但是禁止文件混合多种换行符。  
+
+
+```
+git config --global core.autocrlf input
+git config --global core.safecrlf true
+```
+
+
