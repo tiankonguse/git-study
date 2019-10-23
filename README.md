@@ -139,3 +139,17 @@ git config --global core.safecrlf true
 ```
 
 
+7. 更新子模块  
+
+
+```
+# 添加子模块
+git submodule add url name
+
+#默认展示子模块的状态
+git config --global diff.submodule log
+
+#更新子模块：
+git submodule update --remote
+```
+
