@@ -153,3 +153,38 @@ git config --global diff.submodule log
 git submodule update --remote
 ```
 
+8、git 回滚
+
+
+回滚没有 `git add`的文件 
+
+
+```
+git checkout -- <file>
+```
+
+回滚 `git add` 但没有 `git commit`的文件
+
+```
+git reset HEAD <file>
+```
+
+
+`git commit` 已运行，只能按照版本回滚
+
+
+```
+使用git log命令，查看分支提交历史，确认需要回退的版本
+使用git reset --hard commit_id命令，进行版本回退
+使用git push origin命令，推送至远程分支
+```
+
+回滚到上一次提交
+
+
+```
+git reset --hard HEAD^ 
+```
+
+
+
