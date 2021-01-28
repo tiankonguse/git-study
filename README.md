@@ -9,12 +9,12 @@
 * [github fork](fork.md)
 * [github 创建项目](start.md)
 
+[toc]
+[[toc]]
 
-## 常见命令
 
 
-
-0. 设置账号信息  
+## 0. 设置账号信息  
 
 
 
@@ -31,7 +31,7 @@ git config -e // 编辑当前仓库的配置文件
 ```
 
 
-1. 忽略mode  
+## 1. 忽略mode  
 
 
 有时候重装操作系统，用户会修改，所有文件的 mode 修被修改了，git 都会认为是文件做了修改。  
@@ -43,7 +43,7 @@ git config --add core.filemode false
 ```
 
 
-2. 缓存密码  
+## 2. 缓存密码  
 
 
 如果频繁的向仓库中心提交代码时，就会遇到每次都需要输入用户名和密码的问题。  
@@ -56,7 +56,7 @@ git config --global credential.helper 'cache --timeout=3600'
 ```
 
 
-3. git diff 乱码
+## 3. git diff 乱码
 
 
 显示为 
@@ -73,7 +73,7 @@ git config --global i18n.logoutputencoding utf-8
 export LESSCHARSET=utf-8
 ```
 
-4. 显示各认知的 commit id
+## 4. 显示各认知的 commit id
 
 ```
 # --oneline 将每个提交放在一行显示
@@ -84,7 +84,7 @@ git log --oneline --simplify-by-decoration --graph --all
 ```
 
 
-5. 同步 fork 的代码
+## 5. 同步 fork 的代码
 
 
 ```
@@ -97,7 +97,7 @@ git push origin master #推送到 github
 ```
 
 
-6. CRLF 与 LF 警告问题  
+## 6. CRLF 与 LF 警告问题  
 
 
 UNIX/Linux  上换行符是 `0x0A（LF）`
@@ -139,7 +139,7 @@ git config --global core.safecrlf true
 ```
 
 
-7. 更新子模块  
+## 7. 更新子模块  
 
 
 ```
@@ -153,7 +153,7 @@ git config --global diff.submodule log
 git submodule update --remote
 ```
 
-8、git 回滚
+## 8. git 回滚
 
 
 回滚没有 `git add`的文件 
@@ -187,4 +187,34 @@ git reset --hard HEAD^
 ```
 
 
+## 9. 修改提交记录
 
+参考文档：https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%86%99%E5%8E%86%E5%8F%B2  
+
+
+如果只修改最后一次提交记录，使用下面命令直接修改。  
+
+
+如果最后一次 commit 已经推送到远端，不建议进行修改提交信息。  
+一定要修改的话，可以拉一个新的分支，在新的分支上修改。  
+
+```
+git commit --amend
+```
+
+如果要修改多个信息，就需要使用 `rebase` 来变基提交了。  
+
+
+```
+git rebase -i HEAD~2^
+git rebase -i HEAD~3
+git rebase -i HEAD~3..HEAD  #最近三次提交
+```
+
+## 10、合并多个提交记录
+
+第一个提交保留为 `pick`，之后的提交进行`squash` 即可。  
+
+```
+git rebase -i  [startpoint]  [endpoint]
+```
