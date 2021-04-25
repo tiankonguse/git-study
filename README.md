@@ -218,3 +218,16 @@ git rebase -i HEAD~3..HEAD  #最近三次提交
 ```
 git rebase -i  [startpoint]  [endpoint]
 ```
+
+## 11、OpenSSL SSL_read: Connection was reset, errno 10054  
+
+
+一般情况下，这个是网络不稳定，连接超时导致的。  
+经常遇到的话，可以关闭 ssl 。  
+
+
+```
+git config --global http.sslVerify "false"
+```
+
+
