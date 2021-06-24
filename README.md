@@ -231,3 +231,49 @@ git config --global http.sslVerify "false"
 ```
 
 
+## 12、tag 相关操作
+
+
+查看本地 tag
+
+
+```
+git tag
+git tag -l "v1.*"
+```
+
+
+
+拉取远程 tag 到本地
+
+```
+git pull --tags
+git pull upstream --tags
+```
+
+
+创建 tag
+
+```
+git tag -a v1.2
+git tag -a v1.2 -m "commit myssh v1.0"
+```
+
+
+为历史提交增加 tag
+
+
+```
+git tag -a v0.1 44a59b780cbec4b585fa400d72f789c2a51fdc61
+```
+
+
+推送 tag 
+
+
+```
+git push origin v0.1
+git push origin --tags 
+```
+
+
