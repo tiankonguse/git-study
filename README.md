@@ -293,3 +293,28 @@ git config --global https.proxy http://127.0.0.1:1080
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
+
+
+## 14、版本管理   
+
+
+A successful Git branching model : https://nvie.com/posts/a-successful-git-branching-model/
+A Branching and Releasing Strategy That Fits GitHub Flow : https://hackernoon.com/a-branching-and-releasing-strategy-that-fits-github-flow-be1b6c48eca2
+git版本管理规范： https://chjw.gammainfo.com/2018/06/08/git%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83/
+git分支管理规范： https://github.com/ecomfe/edp/issues/283
+
+```
+master分支：存放随时可供在生产环境中部署的代码
+develop分支: 每次迭代版本的开发分支,保存当前最新开发成果的分支，从最新的master分支派生，开发完成后合并到 release 分支，并要求打一个alpha级的Tag
+release分支: 从develop分支派生，允许做缺陷修正、准备发布版本所需的各项说明信息，但不新增功能，当发布成功时要打一个发布beta Tag，并将代码合并到 master 分支
+hotfix分支: 在master分支发现bug时，在master的分支上派生出一个hotfixes分支
+feature分支: 从develop分支发起feature分支，通常是在开发一项新的软件功能的时候使用，最终合并回develop分支
+```
+
+
+```
+alpha 表示内部测试版本，不建议任何非参与开发人员所在团队使用，在alpha版本期间会不断增加新的功能并修复已有BUG
+beta 表示公开测试版本，不建议稳定项目使用，在beta版本期间会酌情增加新功能，修复已知BUG
+rc 表示发布候选版本，推荐各项目使用，在rc期间不得增加任何新功能，仅修复BUG。如果rc版本未发现任何BUG，则此版本直接转为正式发布版
+GA：正式发布版本，真正的release版本
+```
