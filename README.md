@@ -318,3 +318,52 @@ beta 表示公开测试版本，不建议稳定项目使用，在beta版本期�
 rc 表示发布候选版本，推荐各项目使用，在rc期间不得增加任何新功能，仅修复BUG。如果rc版本未发现任何BUG，则此版本直接转为正式发布版
 GA：正式发布版本，真正的release版本
 ```
+
+## 15、 git diff 
+
+
+
+
+默认与当前 hash 对比
+
+```
+git diff HEAD~2
+```
+
+指定两个 hash 对比
+
+```
+git diff HEAD~2 HEAD~3
+```
+
+与 tag 对比
+
+```
+git diff v1.0.1
+```
+
+与分支对比
+
+```
+git diff feature/xxxx
+```
+
+
+与 hash 对比
+一般来说，通过 hash 串的前 4～6 位就可以区分
+
+```
+git diff b45ba47d1b297217e3ec6a3ab0f61716a8d6ecbc c244d0bf06d56ec86aaedeefa5dcd84dd9febc60
+git diff b45b 355e
+```
+
+
+diff 显示文件列表
+
+```
+git diff HEAD~2 --name-status
+git diff HEAD~2 --stat
+```
+
+
+
